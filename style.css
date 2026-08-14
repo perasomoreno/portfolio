@@ -24,7 +24,7 @@ body {
   /* Arka plan görseli: Kendi görselinin yolunu 'background.jpg' yazan yere ekleyebilirsin */
   background-image: 
     linear-gradient(rgba(13, 17, 23, 0.88), rgba(13, 17, 23, 0.92)), /* Karartma filtresi (Overlay) */
-    url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920&auto=format&fit=crop');
+    url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
