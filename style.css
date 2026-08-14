@@ -1,189 +1,180 @@
-/* ==========================================
-   RESET & BASE STYLES
-   ========================================== */
+/* --- GENEL AYARLAR & RENGİ PALETİ --- */
+:root {
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent-color: #58a6ff;
+  --accent-hover: #1f6feb;
+  --border-color: #30363d;
+  --font-mono: "Fira Code", "Consolas", "Courier New", monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  padding: 40px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-/* Container */
+/* --- KONTEYNER --- */
 .container {
-    max-width: 850px;
-    width: 100%;
-    background: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* ==========================================
-   HEADER SECTION
-   ========================================== */
+/* --- HEADER / BAŞLIK BÖLÜMÜ --- */
 header {
-    margin-bottom: 40px;
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 24px;
 }
 
 .badge {
-    display: inline-block;
-    background-color: rgba(56, 139, 253, 0.15);
-    color: #58a6ff;
-    font-family: monospace;
-    font-size: 0.85rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(56, 139, 253, 0.4);
-    margin-bottom: 15px;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #3fb950;
+  background: rgba(46, 160, 67, 0.15);
+  border: 1px solid rgba(46, 160, 67, 0.4);
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
 h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #f0f6fc;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-    font-family: monospace;
-    color: #8b949e;
-    font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
 }
 
-/* ==========================================
-   SECTIONS & TYPOGRAPHY
-   ========================================== */
-section {
-    margin-bottom: 40px;
+/* --- BÖLÜM (SECTION) ORTAK BİÇİMLENDİRME --- */
+section h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-h2 {
-    font-size: 1.3rem;
-    color: #f0f6fc;
-    margin-bottom: 15px;
-    position: relative;
-    display: flex;
-    align-items: center;
+section h2::before {
+  content: "#";
+  color: var(--accent-color);
+  font-family: var(--font-mono);
 }
 
-h2::before {
-    content: "#";
-    color: #58a6ff;
-    margin-right: 8px;
-    font-family: monospace;
+.about p {
+  color: var(--text-primary);
+  font-size: 1rem;
 }
 
-p {
-    color: #8b949e;
-    font-size: 1rem;
-}
-
-/* ==========================================
-   PROJECTS & EXPERTISE GRID
-   ========================================== */
+/* --- PROJELER & KARTLAR (GRID) --- */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .card {
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 20px;
-    transition: all 0.25s ease-in-out;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-    border-color: #58a6ff;
-    transform: translateY(-3px);
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
 }
 
 .card h3 {
-    font-size: 1.1rem;
-    color: #f0f6fc;
-    margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #f0f6fc;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
 }
 
 .card p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
 
-/* ==========================================
-   CONTACT LINKS
-   ========================================== */
+/* --- İLETİŞİM LİNKLERİ --- */
 .contact-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .contact-links a {
-    color: #58a6ff;
-    text-decoration: none;
-    font-family: monospace;
-    font-size: 0.9rem;
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .contact-links a:hover {
-    background-color: #1f242c;
-    border-color: #58a6ff;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(88, 166, 255, 0.15);
+  background-color: #21262d;
+  border-color: var(--accent-color);
+  color: #ffffff;
 }
 
-/* ==========================================
-   FOOTER
-   ========================================== */
+/* --- FOOTER / ALT BİLGİ --- */
 footer {
-    border-top: 1px solid #30363d;
-    padding-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+  text-align: center;
 }
 
 footer p {
-    font-size: 0.8rem;
-    color: #6e7681;
-    font-family: monospace;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
 }
 
-/* ==========================================
-   RESPONSIVE DESIGN
-   ========================================== */
+/* --- KÜÇÜK EKRAN UYUMLULUĞU (RESPONSIVE) --- */
 @media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
+  body {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
