@@ -245,3 +245,21 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+/* Spotify Kartı ve iframe Düzenlemesi */
+.card.spotify-card {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.card.spotify-card iframe {
+    width: 100% !important;
+    height: 80px !important; /* veya 152px istiyorsan 152px yazabilirsin */
+    border: none;
+    border-radius: 12px;
+    overflow: hidden !important;
+}
+
+/* Kaydırma çubuklarını tarayıcı seviyesinde zorla gizle */
+iframe::-webkit-scrollbar {
+    display: none;
+}
