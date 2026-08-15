@@ -230,7 +230,17 @@ footer p {
   h1 {
     font-size: 1.8rem;
   }
+.card.spotify-card {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.card iframe {
+    border: none;
+    background: transparent;
+}
   .grid {
     grid-template-columns: 1fr;
   }
